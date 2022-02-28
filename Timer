@@ -1,0 +1,18 @@
+public void timer (View view){
+        if (!editText.getText().toString().matches("")) {
+            int saniye = Integer.parseInt(editText.getText().toString()) * 1000;
+            System.out.println(saniye);
+            new CountDownTimer(saniye, 1000) {
+
+                @Override
+                public void onTick(long l) {
+                    textView.setText((l / 1000) + " saniye kaldı");
+                }
+
+                @Override
+                public void onFinish() {
+                    textView.setText("Bitti!!");
+                }
+            }.start();
+        }
+    }
